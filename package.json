@@ -1,0 +1,51 @@
+{
+  "name": "typeview",
+  "description": "TypeScript package to create beautiful CLI-based presentations with minimal code. Effortlessly craft and display terminal slide decks for demos and talks.",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "m10rten",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m10rten/typeview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m10rten/typeview/issues"
+  },
+  "readme": "https://github.com/m10rten/typeview#readme",
+  "scripts": {
+    "build": "pnpm -r exec tsup --format esm,cjs --dts",
+    "lint": "eslint ./**/src/**/*.ts",
+    "test": "pnpm -r exec vitest run",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --passWithNoTests",
+    "prettier:check": "prettier --check .",
+    "format": "prettier --write .",
+    "check": "pnpm typecheck && pnpm lint",
+    "verify": "pnpm build && pnpm test",
+    "release": "changeset publish",
+    "change": "changeset",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.29.7",
+    "@eslint/js": "9.35.0",
+    "@types/jest": "30.0.0",
+    "@types/node": "24.4.0",
+    "eslint": "9.35.0",
+    "husky": "9.1.7",
+    "prettier": "3.6.2",
+    "ts-node": "10.9.2",
+    "tsup": "8.5.0",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.43.0",
+    "zod": "4.1.8",
+    "vitest": "3.2.4"
+  }
+}
