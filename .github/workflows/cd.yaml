@@ -4,11 +4,12 @@ on:
     branches:
       - main
     paths:
-      - "./lib/**/src/**"
+      - "./src/**"
       - ".github/workflows/cd.yaml"
       - ".changeset/**"
       - pnpm-lock.yaml
       - package.json
+      - README.md
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
