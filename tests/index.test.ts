@@ -1,7 +1,8 @@
-import { expect } from "vitest";
+import assert from "node:assert";
+import { describe, it } from "node:test";
 
 describe("fake", () => {
   it("should pass tests", () => {
-    expect(1 + 1).toBe(2);
+    assert.equal(1 + 1, 2);
   });
 });
