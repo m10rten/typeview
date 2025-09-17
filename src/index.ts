@@ -3,6 +3,26 @@ import { buildDefaultTheme } from "./consts.js";
 
 import type { TypeViewOptions, TypeViewTheme } from "./types.js";
 
+/**
+ * Terminal-based slide deck runner with stage-aware navigation.
+ *
+ * Features:
+ * - Interactive navigation (Left/Right arrows, Space to advance, 'q' to quit) when TTY is available.
+ * - Non-interactive mode (e.g., CI/pipes): renders all or only final stages per options.
+ * - Per-slide headers/footers and a themeable output surface.
+ *
+ * Usage: construct with options, add slides, then call `run()`.
+ *
+ * @class TypeView
+ * @see TypeViewOptions
+ * @see TypeViewTheme
+ * @see Slide
+ *
+ * @example
+ * const tv = new TypeView({ title: 'Demo' });
+ * tv.addSlide({ title: 'Intro', content: 'Hello' });
+ * await tv.run();
+ */
 export class TypeView {
   private readonly slides: Slide[] = [];
   private readonly opts: Required<Omit<TypeViewOptions, "theme">> & {

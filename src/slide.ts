@@ -2,6 +2,35 @@ import { normalizeToLines } from "./stage.js";
 
 import type { SlideOptions, SlideStage, StageMode, SlideRender } from "./types.js";
 
+/**
+ * Represents a single slide with optional incremental stages.
+ *
+ * Behavior:
+ * - If stages are provided, they determine the rendered body via `renderStage()`
+ *   and optional per-stage `render` callbacks; base content is always included.
+ * - If no stages are defined, rendering uses the slide's `render` function (if provided),
+ *   otherwise falls back to the base `content`.
+ *
+ * Instances are immutable with respect to configuration after construction.
+ * Stage rendering may be async because stage renderers can be async.
+ *
+ * @class Slide
+ * @see SlideOptions
+ * @see SlideStage
+ *
+ * @example
+ * const slide = new Slide({
+ *   title: 'Intro',
+ *   content: 'Welcome to the demo'
+ * });
+ *
+ * @example
+ * const staged = new Slide({
+ *   title: 'Agenda',
+ *   content: 'Topics:',
+ *   stages: [{ content: '- One' }, { content: '- Two', mode: 'accumulate' }]
+ * });
+ */
 export class Slide {
   public readonly title: string;
   public readonly header?: string;
