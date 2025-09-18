@@ -49,7 +49,8 @@ pnpm ts-node --esm src/demo.ts
 ```
 
 This will give the following output:
-![https://github.com/m10rten/typeview/blob/main/examples/basic.png](!image)
+
+![https://github.com/m10rten/typeview/blob/main/examples/basic.png](https://github.com/m10rten/typeview/blob/main/examples/basic.png)
 
 ## contributing
 
