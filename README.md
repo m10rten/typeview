@@ -48,6 +48,9 @@ pnpm tsx src/demo.ts
 pnpm ts-node --esm src/demo.ts
 ```
 
+This will give the following output:
+![https://github.com/m10rten/typeview/blob/main/examples/basic.png](!image)
+
 ## contributing
 
 Contributions are welcome! Please submit issues and pull requests.
