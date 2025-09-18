@@ -1,7 +1,7 @@
 {
   "name": "typeview",
   "description": "TypeScript package to create beautiful CLI-based presentations with minimal code. Effortlessly craft and display terminal slide decks for demos and talks.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "license": "MIT",
